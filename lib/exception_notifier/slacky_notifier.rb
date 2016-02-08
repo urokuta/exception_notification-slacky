@@ -58,6 +58,16 @@ module ExceptionNotifier
           short: true
         },
         {
+          title: "Request Host",
+          value: @request.hostname,
+          short: true
+        },
+        {
+          title: "User Agent",
+          value: @request.user_agent,
+          short: true
+        },
+        {
           title: "HTTP Method",
           value: @request.request_method,
           short: true
@@ -69,7 +79,7 @@ module ExceptionNotifier
         },
         {
           title: "Occurred on",
-          value: (exception.backtrace.first rescue nil),
+          value: (exception.backtrace.join("\n") rescue nil),
           short: false
         },
         {
