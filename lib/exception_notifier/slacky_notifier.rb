@@ -59,7 +59,7 @@ module ExceptionNotifier
         },
         {
           title: "Request Host",
-          value: @request.hostname,
+          value: @request.host,
           short: true
         },
         {
