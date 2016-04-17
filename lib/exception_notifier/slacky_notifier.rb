@@ -69,12 +69,12 @@ module ExceptionNotifier
         },
         {
           title: "HTTP Method",
-          value: @request.request_method,
+          value: (begin @request.request_method; rescue then "nazo" end),
           short: true
         },
         {
           title: "IP Address",
-          value: @request.ip,
+          value: (begin @request.ip; rescue then "nazo" end),
           short: true
         },
         {
@@ -84,7 +84,7 @@ module ExceptionNotifier
         },
         {
           title: "Error message",
-          value: exception.message,
+          value: (begin exception.message; rescue then "nazo" end),
           short: false
         }
       ]
